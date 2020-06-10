@@ -38,6 +38,14 @@ public class Demo {
                 System.out.println( "You have inserted a new record! The new id is: " + rs.getLong(1) );
             }
 
+            //an UPDATE example
+            long idToUpdate = 32;
+            //the command in MySQL should be like this:
+//            UPDATE albums SET sales = (sales * 100) WHERE id = 32;
+            query = "UPDATE albums SET sales = (sales*100) WHERE id = " + idToUpdate;
+            statement.executeUpdate(query);
+            System.out.println("id #" + idToUpdate + " has been updated.");
+
         } catch(SQLException throwables) {
             throwables.printStackTrace();
         }
