@@ -29,6 +29,15 @@ public class Demo {
                 System.out.println("----------------------------------");
             }
 
+            //an INSERT example. Here I'm using 2 parameters for executeUpdate to account for id/GeneratedKeys, but only 1 is actually necessary
+            String query = "INSERT INTO albums (artist, name, release_date, sales, genre) VALUES ('Hozier', 'Hozier', 2014, 3.5, 'R&B')";
+            statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+            rs = statement.getGeneratedKeys();
+
+            if(rs.next()) {
+                System.out.println( "You have inserted a new record! The new id is: " + rs.getLong(1) );
+            }
+
         } catch(SQLException throwables) {
             throwables.printStackTrace();
         }
