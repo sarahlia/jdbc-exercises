@@ -39,12 +39,18 @@ public class Demo {
             }
 
             //an UPDATE example
-            long idToUpdate = 32;
-            //the command in MySQL should be like this:
-//            UPDATE albums SET sales = (sales * 100) WHERE id = 32;
+            long idToUpdate = 36;
+            //the command in MySQL should look like this:
+            //UPDATE albums SET sales = (sales * 100) WHERE id = 36;
             query = "UPDATE albums SET sales = (sales*100) WHERE id = " + idToUpdate;
             statement.executeUpdate(query);
             System.out.println("id #" + idToUpdate + " has been updated.");
+
+            //a DELETE example
+            long idToDelete = 36;
+            query = "DELETE FROM albums where id = " + idToDelete;
+            statement.execute(query);
+            System.out.println("id #" + idToDelete + " has been deleted.");
 
         } catch(SQLException throwables) {
             throwables.printStackTrace();
