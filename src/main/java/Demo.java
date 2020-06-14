@@ -30,28 +30,28 @@ public class Demo {
             }
 
             //an INSERT example. Here I'm using 2 parameters for executeUpdate to account for id/GeneratedKeys, but only 1 is actually necessary
-            String query = "INSERT INTO albums (artist, name, release_date, sales, genre) VALUES ('Hozier', 'Hozier', 2014, 3.5, 'R&B')";
-            statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
-            rs = statement.getGeneratedKeys();
-
-            if(rs.next()) {
-                System.out.println( "You have inserted a new record! The new id is: " + rs.getLong(1) );
-            }
+//            String query = "INSERT INTO albums (artist, name, release_date, sales, genre) VALUES ('Hozier', 'Hozier', 2014, 3.5, 'R&B')";
+//            statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+//            rs = statement.getGeneratedKeys();
+//
+//            if(rs.next()) {
+//                System.out.println( "You have inserted a new record! The new id is: " + rs.getLong(1) );
+//            }
 
             //an UPDATE example
             long idToUpdate = 36;
             //the command in MySQL should look like this:
             //UPDATE albums SET sales = (sales * 100) WHERE id = 36;
-            query = "UPDATE albums SET sales = (sales*100) WHERE id = " + idToUpdate;
-            statement.executeUpdate(query);
-            System.out.println("id #" + idToUpdate + " has been updated.");
+//            query = "UPDATE albums SET sales = (sales*100) WHERE id = " + idToUpdate;
+//            statement.executeUpdate(query);
+//            System.out.println("id #" + idToUpdate + " has been updated.");
 
             //a DELETE example
             long idToDelete = 36;
-            query = "DELETE FROM albums where id = " + idToDelete;
-            statement.execute(query);
-            System.out.println("id #" + idToDelete + " has been deleted.");
-
+//            query = "DELETE FROM albums where id = " + idToDelete;
+//            statement.execute(query);
+//            System.out.println("id #" + idToDelete + " has been deleted.");
+//
         } catch(SQLException throwables) {
             throwables.printStackTrace();
         }
