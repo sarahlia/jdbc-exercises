@@ -4,7 +4,7 @@ import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
 
-public class MySQLUsersDao implements Users {
+//public class MySQLUsersDao implements Users {
 //    private Connection connection;
 //
 //    public MySQLUsersDao(Config config) {
@@ -22,20 +22,20 @@ public class MySQLUsersDao implements Users {
 //    }
 
     //able to find 1 specific ad that is currently hard-coded
-    public Ad findOne(long id) {
-        PreparedStatement stmt = null;
-        try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = 10");
-            ResultSet rs = stmt.executeQuery();
-            if(rs.next()) {
-                return extractAd(rs);
-            }
-            return null;
-
-        } catch (Exception e) {
-            throw new RuntimeException("Error retrieving ad.", e);
-        }
-    }
+//    public Ad findOne(long id) {
+//        PreparedStatement stmt = null;
+//        try {
+//            stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = 10");
+//            ResultSet rs = stmt.executeQuery();
+//            if(rs.next()) {
+//                return extractAd(rs);
+//            }
+//            return null;
+//
+//        } catch (Exception e) {
+//            throw new RuntimeException("Error retrieving ad.", e);
+//        }
+//    }
 
     //    @Override
 //    public Ad findOne (long id) throws IndexOutOfBoundsException {
@@ -85,4 +85,4 @@ public class MySQLUsersDao implements Users {
 //                rs.getString("password")
 //        );
 //    }
-}
+//}
